@@ -58,6 +58,7 @@ Before do
       # @browser = SauceLabs.watir_browser(ENV['BROWSER'].to_sym)
 
       if(ENV['BROWSER']== "chrome")
+          Selenium::WebDriver::Chrome.driver_path="/usr/bin/chromedriver"
         @browser = Watir::Browser.new ENV['BROWSER'].to_sym,:switches => %w[--disable-extensions  --ignore-certificate-errors --disable-popup-blocking --disable-translate]
       else
         @browser = Watir::Browser.new ENV['BROWSER'].to_sym
